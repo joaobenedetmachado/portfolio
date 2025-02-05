@@ -10,121 +10,169 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link rel="shortcut icon" href="./midias/ICON.ico" type="image/x-icon">
   <style>
-  
+  /* Base styles */
+  body {
+    overflow-x: hidden;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
 
-form {
-      color: black;
-    }
-    .typing-container {
-      font-size: 2em;
-      color: #ffffff;
-      font-family: consolas;
-    }
-    .typing-text {
-      display: inline;
-      border-right: 2px solid #ffffff;
-      padding-right: 5px;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 2s steps(20) 1s forwards, blink 0.75s step-end infinite;
-    }
-    @keyframes typing {
-      to {
-        width: 100%;
-      }
-    }
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
+  /* Header styles */
+  .header-blur {
+    max-height: 100px;
+    padding: 0 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-    svg {
-      fill: #ffffff;
-    }
+  /* Typography */
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 7.5rem);
+    line-height: 1.2;
+    margin: 0;
+  }
 
-    .header-blur {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: rgba(61, 61, 61, 0.027); 
-  backdrop-filter: blur(10px); 
-  z-index: 1000; 
-}
+  .projetosarea a {
+    margin-bottom: 80px;
+  }
 
-@media screen and (max-width: 640px) {
-  .typing-container {
-    font-size: 1.5em;
+
+
+
+  h2 {
+    font-size: clamp(1.25rem, 3vw, 3rem);
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  /* Main content */
+  main {
+    width: 100%;
+    padding: 1rem;
   }
 
   section {
-    padding: 25px !important;
-  }
-
-  .text-5xl {
-    font-size: 2.5rem;
-  }
-
-  .imagemtop img {
     width: 100%;
-    height: auto;
-    margin-top: 2rem;
+    padding: 1rem;
   }
 
-  .flex.flex-col.md\\:flex-row {
-    gap: 2rem;
-  }
-}
-
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-  section {
-    padding: 35px !important;
+  /* Project cards */
+  .projetosarea > div {
+    padding: 1rem !important;
   }
 
-  .typing-container {
-    font-size: 1.75em;
+  .vautlify p[style*="width"],
+  p[style*="width"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0;
   }
 
-  .imagemtop img {
-    width: 90%;
+  /* Images */
+  img {
+    max-width: 100%;
     height: auto;
   }
 
-  .md {
+  /* Contact form */
+  form input,
+  form textarea {
     width: 100%;
+    margin-bottom: 1rem;
   }
 
-.flex.flex-col.md\\:flex-row {
-  gap: 2rem;
-}
+  /* Mobile menu */
+  .menu-button {
+    display: block;
+  }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+  .social-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(17, 24, 39, 0.98);
+    z-index: 1000;
+    display: none;
+    padding: 2rem;
+  }
 
-.header-blur {
-  padding: 1rem;
-}
-
-@media screen and (max-width: 480px) {
-  header {
+  .social-links.open {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .social-links a {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
     gap: 1rem;
-    text-align: center;
+    color: white;
+    text-decoration: none;
   }
 
-  header .flex.gap-4 {
-    flex-direction: column;
-    gap: 0.5rem;
+  /* Responsive layout */
+  @media screen and (max-width: 768px) {
+    section {
+      flex-direction: column !important;
+      padding: 0 !important;
+    }
+
+    .md\:w-1\/2,
+    .md\:w-2\/3,
+    .md\:w-1\/3 {
+      width: 100% !important;
+      margin: 0;
+    }
+
+    .typing-container {
+      margin: 1rem 0;
+    }
+
+    h1[style*="font-size"] {
+      font-size: 3rem !important;
+      line-height: 1.2 !important;
+    }
+
+    .header-blur > div:not(:first-child) {
+      display: none;
+    }
+
+    .projetosarea > div > div {
+      padding: 1rem !important;
+    }
   }
 
-  header .flex.items-center.gap-4 {
-    margin-top: 1rem;
+  /* Desktop styles */
+  @media screen and (min-width: 769px) {
+    .menu-button {
+      display: none;
+    }
+
+    .social-links {
+      display: none !important;
+    }
   }
-}
-}
   </style>
 </head>
  
@@ -144,22 +192,31 @@ img {
     Contato
    </a>
 </div>
-<div style="display: flex; align-items: center; justify-content: space-around; gap: 30px;">
-  <a class="hover:text-gray-400" href="#">
-    <a href="https://github.com/joaobenedetmachado"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2.218 18.616c-.354.069-.468-.149-.468-.336v-1.921c0-.653-.229-1.079-.481-1.296 1.56-.173 3.198-.765 3.198-3.454 0-.765-.273-1.389-.721-1.879.072-.177.312-.889-.069-1.853 0 0-.587-.188-1.923.717-.561-.154-1.159-.231-1.754-.234-.595.003-1.193.08-1.753.235-1.337-.905-1.925-.717-1.925-.717-.379.964-.14 1.676-.067 1.852-.448.49-.722 1.114-.722 1.879 0 2.682 1.634 3.282 3.189 3.459-.2.175-.381.483-.444.936-.4.179-1.413.488-2.037-.582 0 0-.37-.672-1.073-.722 0 0-.683-.009-.048.426 0 0 .46.215.777 1.024 0 0 .405 1.25 2.353.826v1.303c0 .185-.113.402-.462.337-2.782-.925-4.788-3.549-4.788-6.641 0-3.867 3.135-7 7-7s7 3.133 7 7c0 3.091-2.003 5.715-4.782 6.641z"/></svg></a>
-   </a>
-   <a class="hover:text-gray-400" href="#">
-    <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg></a>
-   </a>
-   <a class="hover:text-gray-400" href="#">
-    <a href="https://www.instagram.com/jbenedetm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14.829 6.302c-.738-.034-.96-.04-2.829-.04s-2.09.007-2.828.04c-1.899.087-2.783.986-2.87 2.87-.033.738-.041.959-.041 2.828s.008 2.09.041 2.829c.087 1.879.967 2.783 2.87 2.87.737.033.959.041 2.828.041 1.87 0 2.091-.007 2.829-.041 1.899-.086 2.782-.988 2.87-2.87.033-.738.04-.96.04-2.829s-.007-2.09-.04-2.828c-.088-1.883-.973-2.783-2.87-2.87zm-2.829 9.293c-1.985 0-3.595-1.609-3.595-3.595 0-1.985 1.61-3.594 3.595-3.594s3.595 1.609 3.595 3.594c0 1.985-1.61 3.595-3.595 3.595zm3.737-6.491c-.464 0-.84-.376-.84-.84 0-.464.376-.84.84-.84.464 0 .84.376.84.84 0 .463-.376.84-.84.84zm-1.404 2.896c0 1.289-1.045 2.333-2.333 2.333s-2.333-1.044-2.333-2.333c0-1.289 1.045-2.333 2.333-2.333s2.333 1.044 2.333 2.333zm-2.333-12c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.958 14.886c-.115 2.545-1.532 3.955-4.071 4.072-.747.034-.986.042-2.887.042s-2.139-.008-2.886-.042c-2.544-.117-3.955-1.529-4.072-4.072-.034-.746-.042-.985-.042-2.886 0-1.901.008-2.139.042-2.886.117-2.544 1.529-3.955 4.072-4.071.747-.035.985-.043 2.886-.043s2.14.008 2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z"/></svg></a>
-   </a>
+<button class="menu-button" id="menuButton" aria-label="Toggle menu">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+  </svg>
+</button>
+
+<div class="social-links" id="socialLinks">
+  <a href="https://github.com/joaobenedetmachado">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2.218 18.616c-.354.069-.468-.149-.468-.336v-1.921c0-.653-.229-1.079-.481-1.296 1.56-.173 3.198-.765 3.198-3.454 0-.765-.273-1.389-.721-1.879.072-.177.312-.889-.069-1.853 0 0-.587-.188-1.923.717-.561-.154-1.159-.231-1.754-.234-.595.003-1.193.08-1.753.235-1.337-.905-1.925-.717-1.925-.717-.379.964-.14 1.676-.067 1.852-.448.49-.722 1.114-.722 1.879 0 2.682 1.634 3.282 3.189 3.459-.2.175-.381.483-.444.936-.4.179-1.413.488-2.037-.582 0 0-.37-.672-1.073-.722 0 0-.683-.009-.048.426 0 0 .46.215.777 1.024 0 0 .405 1.25 2.353.826v1.303c0 .185-.113.402-.462.337-2.782-.925-4.788-3.549-4.788-6.641 0-3.867 3.135-7 7-7s7 3.133 7 7c0 3.091-2.003 5.715-4.782 6.641z"/></svg>
+    <span>GitHub</span>
+  </a>
+  <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
+    <span>LinkedIn</span>
+  </a>
+  <a href="https://www.instagram.com/jbenedetm">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14.829 6.302c-.738-.034-.96-.04-2.829-.04s-2.09.007-2.828.04c-1.899.087-2.783.986-2.87 2.87-.033.738-.041.959-.041 2.828s.008 2.09.041 2.829c.087 1.879.967 2.783 2.87 2.87.737.033.959.041 2.828.041 1.87 0 2.091-.007 2.829-.041 1.899-.086 2.782-.988 2.87-2.87.033-.738.04-.96.04-2.829s-.007-2.09-.04-2.828c-.088-1.883-.973-2.783-2.87-2.87zm-2.829 9.293c-1.985 0-3.595-1.609-3.595-3.595 0-1.985 1.61-3.594 3.595-3.594s3.595 1.609 3.595 3.594c0 1.985-1.61 3.595-3.595 3.595zm3.737-6.491c-.464 0-.84-.376-.84-.84 0-.464.376-.84.84-.84.464 0 .84.376.84.84 0 .463-.376.84-.84.84zm-1.404 2.896c0 1.289-1.045 2.333-2.333 2.333s-2.333-1.044-2.333-2.333c0-1.289 1.045-2.333 2.333-2.333s2.333 1.044 2.333 2.333zm-2.333-12c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.958 14.886c-.115 2.545-1.532 3.955-4.071 4.072-.747.034-.986.042-2.887.042s-2.139-.008-2.886-.042c-2.544-.117-3.955-1.529-4.072-4.072-.034-.746-.042-.985-.042-2.886 0-1.901.008-2.139.042-2.886.117-2.544 1.529-3.955 4.072-4.071.747-.035.985-.043 2.886-.043s2.14.008 2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z"/></svg>
+    <span>Instagram</span>
+  </a>
 </div>
   </header>
-  <main class="px-6 md:px-12 lg:px-24">
-   <section class="flex flex-col md:flex-row items-center mt-12" style="display: flex; padding: 100px;">
+  <main class="px-4 md:px-12 lg:px-24">
+   <section class="flex flex-col md:flex-row items-center mt-12" style="padding: 2rem;">
     <div class="md:w-1/2">
-     <h1 style="font-size: 120px; font-weight: bold; line-height: 120px;">
+     <h1 style="font-size: clamp(2.5rem, 8vw, 7.5rem); font-weight: bold; line-height: 1.2;">
       João <br> Benedet
      </h1>
      <div class="typing-container">
@@ -170,28 +227,26 @@ img {
       <img
         alt="Illustration of a laptop with a blue background"
         class="w-full"
-        height="300"
         src="./midias/Sem título.png"
-        width="400"
       />
     </div>
    </section>
-   <section class="mt-24">
-    <h3 class="text-3xl font-bold" id="projetos">
+   <section class="mt-24 projetosarea">
+    <h3 class="text-3xl font-bold text-center" id="projetos">
      Projetos
     </h3>
     <hr class="border-gray-700 mt-2"/>
     <div class="mt-12">
-     <div class="flex flex-col md:flex-row items-center" style="padding: 80px;">
-      <div class="md:w-1/2" style="display: flex; flex-direction: column; justify-content: space-around; gap: 20px;">
-       <div class="flex items-center space-x-4">
+     <div class="flex flex-col md:flex-row items-center justify-center" style="padding: 40px;">
+      <div class="md:w-1/2 vz text-center" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+       <div class="flex items-center space-x-4 vautlify">
         <i class="fas fa-lock text-4xl text-blue-400">
         </i>
-        <h4 class="text-2xl font-bold" style="font-size: 50px;">
+        <h4 class="text-2xl font-bold" style="font-size: 35px;">
          Vaultify
         </h4>
        </div>
-       <p class="mt-4 text-gray-300 text-2xl" style="width: 400px;">
+       <p class="mt-4 text-gray-300 text-lg" style="max-width: 300px;">
         Vaultify é um gerenciador de senhas seguro e intuitivo, desenvolvido em Python. Ele oferece uma interface gráfica amigável e utiliza um banco de dados para armazenar informações de login, garantindo que suas senhas sejam mantidas em segurança através de hashing.
        </p>
        <a class="mt-4 bg-blue-500 text-white py-2 px-4 rounded" style="width: 200px; display: flex; align-items: center; justify-content: center;" href="https://github.com/joaobenedetmachado/Vaultify">
@@ -199,21 +254,21 @@ img {
        </a>
       </div>
       <div>
-       <img alt="Screenshots of the Vaultify application" class="w-full " height="600" src="./midias/vautlify.png" width="400"/>
+       <img alt="Screenshots of the Vaultify application" class="w-full" height="600" src="./midias/vautlify.png" width="400"/>
       </div>
      </div>
     </div>
     <div class="mt-12">
-      <div class="flex flex-col md:flex-row items-center" style="padding: 80px;">
-        <div class="md:w-1/2" style="display: flex; flex-direction: column; justify-content: space-around; gap: 20px;">
+      <div class="flex flex-col md:flex-row items-center justify-center" style="padding: 40px;">
+        <div class="md:w-1/2 text-center" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
           <div class="flex items-center space-x-4">
           <i class="fas fa-tint text-4xl text-blue-400">
           </i>
-         <h4 class="text-2xl font-bold" style="font-size: 50px;">
+         <h4 class="text-2xl font-bold" style="font-size: 35px;">
           AquaMetrics
          </h4>
         </div>
-        <p class="mt-4 text-gray-300 text-2xl" style="width: 400px;">
+        <p class="mt-4 text-gray-300 text-lg" style="max-width: 300px;">
           O Aqua Metrics é uma ferramenta usada para monitorar algumas informações presentes nas águas. Ele mede dados como pH, temperatura, turbidez (TDS), ajudando a avaliar sua qualidade. Além disso, auxilia no controle de possíveis problemas na água, como o pH muito alto ou muito baixo, assim como o TDS e sua temperatura.
         </p>
         <a class="mt-4 bg-blue-500 text-white py-2 px-4 rounded" style="width: 200px; display: flex; align-items: center; justify-content: center;" href="https://github.com/joaobenedetmachado/AquaMetrics.git">
@@ -231,7 +286,7 @@ img {
      Sobre Mim
     </h3>
     <hr class="border-gray-700 mt-2"/>
-    <div class="flex flex-col md:flex-row mt-12" style="display: flex; gap: 120px; padding: 80px;">
+    <div class="flex flex-col md:flex-row mt-12" style="display: flex; gap: 120px;">
      <div class="md:w-2/3">
       <p class="text-gray-400 idade">
        Olá, sou o João Victor Benedet, um estudante de <span id="idade"></span> anos apaixonado por tecnologia e programação. Atualmente, estou cursando Técnico em Informática na SATC, onde adquiro conhecimentos práticos e teóricos para desenvolver minhas habilidades no campo da tecnologia.
@@ -266,6 +321,28 @@ img {
    </section>
   </main>
   <script>
+   const menuButton = document.getElementById('menuButton');
+const socialLinks = document.getElementById('socialLinks');
+
+menuButton.addEventListener('click', () => {
+  socialLinks.classList.toggle('open');
+  document.body.classList.toggle('menu-open');
+});
+
+// Close menu when pressing escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && socialLinks.classList.contains('open')) {
+    socialLinks.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+});
+
+// Add transition end listener to handle display property
+socialLinks.addEventListener('transitionend', (e) => {
+  if (e.propertyName === 'opacity' && !socialLinks.classList.contains('open')) {
+    socialLinks.style.display = 'none';
+  }
+});
 function atualizarIdade() {
   const anoAtual = new Date().getFullYear(); 
   const anoNascimento = 2007;
@@ -320,7 +397,6 @@ function atualizarIdade() {
   const rotateY = (deltaX / rect.width) * -10;
   element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 });atualizarIdade()
-
   </script>
  </body>
 </html>
