@@ -58,7 +58,6 @@
     max-width: 100%;
   }
 
-  /* Main content */
   main {
     width: 100%;
     padding: 1rem;
@@ -69,7 +68,6 @@
     padding: 1rem;
   }
 
-  /* Project cards */
   .projetosarea > div {
     padding: 1rem !important;
   }
@@ -81,20 +79,17 @@
     padding: 0;
   }
 
-  /* Images */
   img {
     max-width: 100%;
     height: auto;
   }
 
-  /* Contact form */
   form input,
   form textarea {
     width: 100%;
     margin-bottom: 1rem;
   }
 
-  /* Mobile menu */
   .menu-button {
     display: block;
   }
@@ -130,7 +125,6 @@
     text-decoration: none;
   }
 
-  /* Responsive layout */
   @media screen and (max-width: 768px) {
     section {
       flex-direction: column !important;
@@ -162,7 +156,6 @@
     }
   }
 
-  /* Desktop styles */
   @media screen and (min-width: 769px) {
     .menu-button {
       display: none;
@@ -173,7 +166,6 @@
     }
   }
 
-  /* Animações e estilos para as skills */
   .skill-bar {
     width: 100%;
     height: 12px;
@@ -454,18 +446,15 @@
     background: rgba(255, 255, 255, 0.1);
   }
 
-  /* Ajuste para o conteúdo principal */
   main {
     padding-top: 5rem;
   }
 
-  /* Melhorias gerais */
   body {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
   }
 
-  /* Scrollbar personalizada */
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -483,13 +472,11 @@
     background: #2563eb;
   }
 
-  /* Seleção de texto */
   ::selection {
     background: #3b82f6;
     color: white;
   }
 
-  /* Footer Styles */
   footer {
     position: relative;
     overflow: hidden;
@@ -543,14 +530,12 @@
   <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-opacity-80 bg-gray-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
-        <!-- Logo/Nome -->
         <div class="flex items-center">
           <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text hover:from-blue-500 hover:to-cyan-500 transition-all duration-300">
             João Benedet
           </a>
         </div>
 
-        <!-- Menu Desktop -->
         <nav class="hidden md:flex items-center space-x-8">
           <a href="#projetos" class="nav-link">Projetos</a>
           <a href="#habilidades" class="nav-link">Habilidades</a>
@@ -558,7 +543,6 @@
           <a href="#contato" class="nav-link">Contato</a>
         </nav>
 
-        <!-- Botões de Redes Sociais Desktop -->
         <div class="hidden md:flex items-center space-x-4">
           <a href="https://github.com/joaobenedetmachado" class="social-icon-link" target="_blank">
             <i class="fab fa-github text-xl"></i>
@@ -571,7 +555,6 @@
           </a>
         </div>
 
-        <!-- Menu Mobile Button -->
         <button class="md:hidden menu-button" id="menuButton" aria-label="Toggle menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
@@ -580,7 +563,6 @@
       </div>
     </div>
 
-    <!-- Menu Mobile -->
     <div class="mobile-menu md:hidden" id="mobileMenu">
       <nav class="px-4 pt-2 pb-4 space-y-2">
         <a href="#projetos" class="mobile-nav-link">Projetos</a>
@@ -624,7 +606,6 @@
     <hr class="border-gray-700 mt-2"/>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-      <!-- Projeto Vaultify -->
       <div class="project-card fade-in">
         <div class="project-image">
           <img src="./midias/vautlify.png" alt="Screenshot do Vaultify" class="rounded-t-xl w-full h-48 object-cover"/>
@@ -652,7 +633,6 @@
         </div>
       </div>
 
-      <!-- Projeto AquaMetrics -->
       <div class="project-card fade-in">
         <div class="project-image">
           <img src="./midias/aquametrics.png" alt="Screenshot do AquaMetrics" class="rounded-t-xl w-full h-48 object-cover"/>
@@ -783,7 +763,6 @@
   <footer class="bg-gray-800 mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Logo e Descrição -->
         <div class="col-span-1 md:col-span-2">
           <h4 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text">
             João Benedet
@@ -804,7 +783,6 @@
           </div>
         </div>
 
-        <!-- Links Rápidos -->
         <div>
           <h5 class="text-lg font-semibold text-white mb-4">Links Rápidos</h5>
           <ul class="space-y-2">
@@ -823,7 +801,6 @@
           </ul>
         </div>
 
-        <!-- Contato -->
         <div>
           <h5 class="text-lg font-semibold text-white mb-4">Contato</h5>
           <ul class="space-y-2">
@@ -839,7 +816,6 @@
         </div>
       </div>
 
-      <!-- Linha Divisória -->
       <div class="border-t border-gray-700 mt-12 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-400 text-sm">
@@ -863,21 +839,18 @@ menuButton.addEventListener('click', () => {
   mobileMenu.classList.toggle('open');
 });
 
-// Fechar menu ao clicar em um link
 document.querySelectorAll('.mobile-nav-link').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
   });
 });
 
-// Fechar menu ao pressionar ESC
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
     mobileMenu.classList.remove('open');
   }
 });
 
-// Adicionar classe ativa ao link atual
 const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 const sections = document.querySelectorAll('section');
 
@@ -898,7 +871,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
