@@ -12,6 +12,9 @@
   <style>
   /* Base styles */
   body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
     overflow-x: hidden;
     width: 100vw;
     margin: 0;
@@ -173,45 +176,386 @@
       display: none !important;
     }
   }
+
+  /* Animações e estilos para as skills */
+  .skill-bar {
+    width: 100%;
+    height: 12px;
+    background: #2d3748;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 6px;
+    transition: width 1.5s ease-in-out;
+    position: relative;
+  }
+
+  .skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      rgba(255,255,255,0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255,255,255,0.2) 50%,
+      rgba(255,255,255,0.2) 75%,
+      transparent 75%
+    );
+    background-size: 15px 15px;
+    animation: shine 1s linear infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 30px 0;
+    }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+
+  .project-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .project-link:hover {
+    background: white;
+    color: black;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  .tech-tag {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+  }
+
+  .tech-tag:hover {
+    background: rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .grid-cols-2 {
+      grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+      max-width: 100%;
+    }
+  }
+
+  .skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 200px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .skill-card:hover::before {
+    opacity: 1;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .skill-card h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    color: #fff;
+  }
+
+  .skill-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .skill-card i {
+    transition: transform 0.3s ease;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-card:hover i {
+    transform: scale(1.2);
+  }
+
+  @media (max-width: 768px) {
+    .grid-cols-2 {
+      grid-template-columns: 1fr;
+    }
+    
+    .skill-card {
+      min-height: 180px;
+    }
+  }
+
+  /* Header e navegação */
+  .nav-link {
+    position: relative;
+    color: #94a3b8;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #ffffff;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .social-icon-link {
+    color: #94a3b8;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+
+  .social-icon-link:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-menu {
+    display: none;
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 0.75rem;
+    color: #94a3b8;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+  }
+
+  .mobile-nav-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Ajuste para o conteúdo principal */
+  main {
+    padding-top: 5rem;
+  }
+
+  /* Melhorias gerais */
+  body {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1f2937;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+  }
+
+  /* Seleção de texto */
+  ::selection {
+    background: #3b82f6;
+    color: white;
+  }
   </style>
 </head>
  
  <body class="bg-gray-900 text-white font-sans">
-  <header class="flex justify-between items-center p-6 header-blur">
-    <h1 class="text-xl font-bold">
-    João Benedet
-   </h1>
-<div style="display: flex; gap: 40px;">
-  <a class="hover:text-gray-400" href="#projetos">
-    Projetos
-   </a>
-   <a class="hover:text-gray-400" href="#sobremim">
-    Sobre Mim
-   </a>
-   <a class="hover:text-gray-400" href="#sobremim">
-    Contato
-   </a>
-</div>
-<button class="menu-button" id="menuButton" aria-label="Toggle menu">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
-  </svg>
-</button>
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-opacity-80 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo/Nome -->
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text hover:from-blue-500 hover:to-cyan-500 transition-all duration-300">
+            João Benedet
+          </a>
+        </div>
 
-<div class="social-links" id="socialLinks">
-  <a href="https://github.com/joaobenedetmachado">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2.218 18.616c-.354.069-.468-.149-.468-.336v-1.921c0-.653-.229-1.079-.481-1.296 1.56-.173 3.198-.765 3.198-3.454 0-.765-.273-1.389-.721-1.879.072-.177.312-.889-.069-1.853 0 0-.587-.188-1.923.717-.561-.154-1.159-.231-1.754-.234-.595.003-1.193.08-1.753.235-1.337-.905-1.925-.717-1.925-.717-.379.964-.14 1.676-.067 1.852-.448.49-.722 1.114-.722 1.879 0 2.682 1.634 3.282 3.189 3.459-.2.175-.381.483-.444.936-.4.179-1.413.488-2.037-.582 0 0-.37-.672-1.073-.722 0 0-.683-.009-.048.426 0 0 .46.215.777 1.024 0 0 .405 1.25 2.353.826v1.303c0 .185-.113.402-.462.337-2.782-.925-4.788-3.549-4.788-6.641 0-3.867 3.135-7 7-7s7 3.133 7 7c0 3.091-2.003 5.715-4.782 6.641z"/></svg>
-    <span>GitHub</span>
-  </a>
-  <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
-    <span>LinkedIn</span>
-  </a>
-  <a href="https://www.instagram.com/jbenedetm">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14.829 6.302c-.738-.034-.96-.04-2.829-.04s-2.09.007-2.828.04c-1.899.087-2.783.986-2.87 2.87-.033.738-.041.959-.041 2.828s.008 2.09.041 2.829c.087 1.879.967 2.783 2.87 2.87.737.033.959.041 2.828.041 1.87 0 2.091-.007 2.829-.041 1.899-.086 2.782-.988 2.87-2.87.033-.738.04-.96.04-2.829s-.007-2.09-.04-2.828c-.088-1.883-.973-2.783-2.87-2.87zm-2.829 9.293c-1.985 0-3.595-1.609-3.595-3.595 0-1.985 1.61-3.594 3.595-3.594s3.595 1.609 3.595 3.594c0 1.985-1.61 3.595-3.595 3.595zm3.737-6.491c-.464 0-.84-.376-.84-.84 0-.464.376-.84.84-.84.464 0 .84.376.84.84 0 .463-.376.84-.84.84zm-1.404 2.896c0 1.289-1.045 2.333-2.333 2.333s-2.333-1.044-2.333-2.333c0-1.289 1.045-2.333 2.333-2.333s2.333 1.044 2.333 2.333zm-2.333-12c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.958 14.886c-.115 2.545-1.532 3.955-4.071 4.072-.747.034-.986.042-2.887.042s-2.139-.008-2.886-.042c-2.544-.117-3.955-1.529-4.072-4.072-.034-.746-.042-.985-.042-2.886 0-1.901.008-2.139.042-2.886.117-2.544 1.529-3.955 4.072-4.071.747-.035.985-.043 2.886-.043s2.14.008 2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z"/></svg>
-    <span>Instagram</span>
-  </a>
-</div>
+        <!-- Menu Desktop -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#projetos" class="nav-link">Projetos</a>
+          <a href="#habilidades" class="nav-link">Habilidades</a>
+          <a href="#sobremim" class="nav-link">Sobre Mim</a>
+          <a href="#contato" class="nav-link">Contato</a>
+        </nav>
+
+        <!-- Botões de Redes Sociais Desktop -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="https://github.com/joaobenedetmachado" class="social-icon-link" target="_blank">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/" class="social-icon-link" target="_blank">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="https://www.instagram.com/jbenedetm" class="social-icon-link" target="_blank">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+        </div>
+
+        <!-- Menu Mobile Button -->
+        <button class="md:hidden menu-button" id="menuButton" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu md:hidden" id="mobileMenu">
+      <nav class="px-4 pt-2 pb-4 space-y-2">
+        <a href="#projetos" class="mobile-nav-link">Projetos</a>
+        <a href="#habilidades" class="mobile-nav-link">Habilidades</a>
+        <a href="#sobremim" class="mobile-nav-link">Sobre Mim</a>
+        <a href="#contato" class="mobile-nav-link">Contato</a>
+      </nav>
+      <div class="flex justify-center space-x-6 pt-4 pb-6 border-t border-gray-700">
+        <a href="https://github.com/joaobenedetmachado" class="social-icon-link" target="_blank">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/" class="social-icon-link" target="_blank">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+        <a href="https://www.instagram.com/jbenedetm" class="social-icon-link" target="_blank">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+      </div>
+    </div>
   </header>
   <main class="px-4 md:px-12 lg:px-24">
    <section class="flex flex-col md:flex-row items-center mt-12" style="padding: 2rem;">
@@ -232,55 +576,129 @@
     </div>
    </section>
    <section class="mt-24 projetosarea">
-    <h3 class="text-3xl font-bold text-center" id="projetos">
-     Projetos
-    </h3>
+    <h3 class="text-3xl font-bold text-center" id="projetos">Projetos</h3>
     <hr class="border-gray-700 mt-2"/>
-    <div class="mt-12">
-     <div class="flex flex-col md:flex-row items-center justify-center" style="padding: 40px;">
-      <div class="md:w-1/2 vz text-center" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-       <div class="flex items-center space-x-4 vautlify">
-        <i class="fas fa-lock text-4xl text-blue-400">
-        </i>
-        <h4 class="text-2xl font-bold" style="font-size: 35px;">
-         Vaultify
-        </h4>
-       </div>
-       <p class="mt-4 text-gray-300 text-lg" style="max-width: 300px;">
-        Vaultify é um gerenciador de senhas seguro e intuitivo, desenvolvido em Python. Ele oferece uma interface gráfica amigável e utiliza um banco de dados para armazenar informações de login, garantindo que suas senhas sejam mantidas em segurança através de hashing.
-       </p>
-       <a class="mt-4 bg-blue-500 text-white py-2 px-4 rounded" style="width: 200px; display: flex; align-items: center; justify-content: center;" href="https://github.com/joaobenedetmachado/Vaultify">
-        Acesse aqui
-       </a>
-      </div>
-      <div>
-       <img alt="Screenshots of the Vaultify application" class="w-full" height="600" src="./midias/vautlify.png" width="400"/>
-      </div>
-     </div>
-    </div>
-    <div class="mt-12">
-      <div class="flex flex-col md:flex-row items-center justify-center" style="padding: 40px;">
-        <div class="md:w-1/2 text-center" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-          <div class="flex items-center space-x-4">
-          <i class="fas fa-tint text-4xl text-blue-400">
-          </i>
-         <h4 class="text-2xl font-bold" style="font-size: 35px;">
-          AquaMetrics
-         </h4>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <!-- Projeto Vaultify -->
+      <div class="project-card fade-in">
+        <div class="project-image">
+          <img src="./midias/vautlify.png" alt="Screenshot do Vaultify" class="rounded-t-xl w-full h-48 object-cover"/>
+          <div class="project-overlay">
+            <a href="https://github.com/joaobenedetmachado/Vaultify" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+              Ver Projeto
+            </a>
+          </div>
         </div>
-        <p class="mt-4 text-gray-300 text-lg" style="max-width: 300px;">
-          O Aqua Metrics é uma ferramenta usada para monitorar algumas informações presentes nas águas. Ele mede dados como pH, temperatura, turbidez (TDS), ajudando a avaliar sua qualidade. Além disso, auxilia no controle de possíveis problemas na água, como o pH muito alto ou muito baixo, assim como o TDS e sua temperatura.
-        </p>
-        <a class="mt-4 bg-blue-500 text-white py-2 px-4 rounded" style="width: 200px; display: flex; align-items: center; justify-content: center;" href="https://github.com/joaobenedetmachado/AquaMetrics.git">
-          Acesse aqui
-        </a>
-       </div>
-       <div class="">
-        <img alt="Screenshots of the Vaultify application" class="w-full" height="600" src="./midias/aquametrics.png" width="400"/>
-       </div>
+        <div class="project-content">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fas fa-lock text-3xl text-blue-400"></i>
+            <h4 class="text-2xl font-bold">Vaultify</h4>
+          </div>
+          <p class="text-gray-300 mb-4">
+            Gerenciador de senhas seguro e intuitivo desenvolvido em Python. Interface gráfica amigável com banco de dados para armazenamento seguro de senhas.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">Tkinter</span>
+            <span class="tech-tag">Criptografia</span>
+          </div>
+        </div>
       </div>
-     </div>
-   </section>
+
+      <!-- Projeto AquaMetrics -->
+      <div class="project-card fade-in">
+        <div class="project-image">
+          <img src="./midias/aquametrics.png" alt="Screenshot do AquaMetrics" class="rounded-t-xl w-full h-48 object-cover"/>
+          <div class="project-overlay">
+            <a href="https://github.com/joaobenedetmachado/AquaMetrics" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+              Ver Projeto
+            </a>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fas fa-tint text-3xl text-blue-400"></i>
+            <h4 class="text-2xl font-bold">AquaMetrics</h4>
+          </div>
+          <p class="text-gray-300 mb-4">
+            Sistema de monitoramento de qualidade da água que mede pH, temperatura e turbidez (TDS). Auxilia no controle e prevenção de problemas relacionados à qualidade da água.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tech-tag">Pyhton</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Javascript</span>
+            <span class="tech-tag">HTML/CSS</span>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <section class="mt-24">
+    <h3 class="text-3xl font-bold text-center">Habilidades</h3>
+    <hr class="border-gray-700 mt-2"/>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <div class="fade-in">
+        <h4 class="text-xl font-bold mb-6">Front-end</h4>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="skill-card">
+            <i class="fab fa-react text-4xl text-blue-400"></i>
+            <h5>React</h5>
+            <p>Desenvolvimento de SPAs e componentes reutilizáveis</p>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-react text-4xl text-cyan-400"></i>
+            <h5>React Native</h5>
+            <p>Desenvolvimento mobile multiplataforma</p>
+          </div>
+          <div class="skill-card">
+            <div class="flex gap-2">
+              <i class="fab fa-html5 text-4xl text-orange-500"></i>
+              <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+            </div>
+            <h5>HTML & CSS</h5>
+            <p>Layouts responsivos e estilização moderna</p>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-js text-4xl text-yellow-400"></i>
+            <h5>JavaScript</h5>
+            <p>ES6+, APIs, Async/Await</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="fade-in">
+        <h4 class="text-xl font-bold mb-6">Back-end</h4>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="skill-card">
+            <i class="fab fa-java text-4xl text-red-500"></i>
+            <h5>Java</h5>
+            <p>POO, Collections, APIs</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-leaf text-4xl text-green-500"></i>
+            <h5>Spring</h5>
+            <p>Spring Boot, MVC, JPA</p>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-python text-4xl text-yellow-300"></i>
+            <h5>Python</h5>
+            <p>Automação e desenvolvimento backend</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-database text-4xl text-blue-600"></i>
+            <h5>MySQL</h5>
+            <p>Queries e modelagem de dados</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
    <section class="mt-24" id="sobremim">
     <h3 class="text-3xl font-bold">
      Sobre Mim
@@ -322,27 +740,57 @@
   </main>
   <script>
    const menuButton = document.getElementById('menuButton');
-const socialLinks = document.getElementById('socialLinks');
+const mobileMenu = document.getElementById('mobileMenu');
 
 menuButton.addEventListener('click', () => {
-  socialLinks.classList.toggle('open');
-  document.body.classList.toggle('menu-open');
+  mobileMenu.classList.toggle('open');
 });
 
-// Close menu when pressing escape key
+// Fechar menu ao clicar em um link
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Fechar menu ao pressionar ESC
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && socialLinks.classList.contains('open')) {
-    socialLinks.classList.remove('open');
-    document.body.classList.remove('menu-open');
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+    mobileMenu.classList.remove('open');
   }
 });
 
-// Add transition end listener to handle display property
-socialLinks.addEventListener('transitionend', (e) => {
-  if (e.propertyName === 'opacity' && !socialLinks.classList.contains('open')) {
-    socialLinks.style.display = 'none';
-  }
+// Adicionar classe ativa ao link atual
+const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+const sections = document.querySelectorAll('section');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (window.pageYOffset >= sectionTop - 100) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('text-white');
+    if (link.getAttribute('href').slice(1) === current) {
+      link.classList.add('text-white');
+    }
+  });
 });
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
 function atualizarIdade() {
   const anoAtual = new Date().getFullYear(); 
   const anoNascimento = 2007;
@@ -397,6 +845,37 @@ function atualizarIdade() {
   const rotateY = (deltaX / rect.width) * -10;
   element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 });atualizarIdade()
+
+// Animação de scroll para os projetos
+const projectObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll('.project-card').forEach(card => {
+  projectObserver.observe(card);
+});
+
+const observerOptions = {
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(element => {
+  observer.observe(element);
+});
   </script>
  </body>
 </html>
