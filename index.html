@@ -1,537 +1,536 @@
 <html lang="pt-BR">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>
-   João Benedet
+    João Benedet
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
   <link rel="shortcut icon" href="./midias/ICON.ico" type="image/x-icon">
   <style>
-  /* Base styles */
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-    overflow-x: hidden;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Header styles */
-  .header-blur {
-    max-height: 100px;
-    padding: 0 1rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  /* Typography */
-  h1 {
-    font-size: clamp(1.5rem, 4vw, 7.5rem);
-    line-height: 1.2;
-    margin: 0;
-  }
-
-  .projetosarea a {
-    margin-bottom: 80px;
-  }
-
-  h2 {
-    font-size: clamp(1.25rem, 3vw, 3rem);
-    line-height: 1.3;
-  }
-
-  h3 {
-    font-size: clamp(1rem, 2.5vw, 2.5rem);
-    line-height: 1.4;
-  }
-
-  p {
-    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
-    line-height: 1.6;
-    max-width: 100%;
-  }
-
-  main {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  section {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .projetosarea > div {
-    padding: 1rem !important;
-  }
-
-  .vautlify p[style*="width"],
-  p[style*="width"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  form input,
-  form textarea {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  .menu-button {
-    display: block;
-  }
-
-  .social-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(17, 24, 39, 0.98);
-    z-index: 1000;
-    display: none;
-    padding: 2rem;
-  }
-
-  .social-links.open {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .social-links a {
-    width: 100%;
-    max-width: 300px;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: white;
-    text-decoration: none;
-  }
-
-  @media screen and (max-width: 768px) {
-    section {
-      flex-direction: column !important;
-      padding: 0 !important;
+    /* Base styles */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      overflow-x: hidden;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
     }
 
-    .md\:w-1\/2,
-    .md\:w-2\/3,
-    .md\:w-1\/3 {
-      width: 100% !important;
+    /* Header styles */
+    .header-blur {
+      max-height: 100px;
+      padding: 0 1rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 7.5rem);
+      line-height: 1.2;
       margin: 0;
     }
 
-    .typing-container {
-      margin: 1rem 0;
+    .projetosarea a {
+      margin-bottom: 80px;
     }
 
-    h1[style*="font-size"] {
-      font-size: 3rem !important;
-      line-height: 1.2 !important;
+    h2 {
+      font-size: clamp(1.25rem, 3vw, 3rem);
+      line-height: 1.3;
     }
 
-    .header-blur > div:not(:first-child) {
-      display: none;
+    h3 {
+      font-size: clamp(1rem, 2.5vw, 2.5rem);
+      line-height: 1.4;
     }
 
-    .projetosarea > div > div {
+    p {
+      font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+      line-height: 1.6;
+      max-width: 100%;
+    }
+
+    main {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    section {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .projetosarea>div {
       padding: 1rem !important;
     }
-  }
 
-  @media screen and (min-width: 769px) {
+    .vautlify p[style*="width"],
+    p[style*="width"] {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
     .menu-button {
-      display: none;
+      display: block;
     }
 
     .social-links {
-      display: none !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(17, 24, 39, 0.98);
+      z-index: 1000;
+      display: none;
+      padding: 2rem;
     }
-  }
 
-  .skill-bar {
-    width: 100%;
-    height: 12px;
-    background: #2d3748;
-    border-radius: 6px;
-    overflow: hidden;
-  }
-
-  .skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    border-radius: 6px;
-    transition: width 1.5s ease-in-out;
-    position: relative;
-  }
-
-  .skill-progress::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      45deg,
-      rgba(255,255,255,0.2) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255,255,255,0.2) 50%,
-      rgba(255,255,255,0.2) 75%,
-      transparent 75%
-    );
-    background-size: 15px 15px;
-    animation: shine 1s linear infinite;
-  }
-
-  @keyframes shine {
-    0% {
-      background-position: 0 0;
+    .social-links.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-    100% {
-      background-position: 30px 0;
+
+    .social-links a {
+      width: 100%;
+      max-width: 300px;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+      text-decoration: none;
     }
-  }
 
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-  }
+    @media screen and (max-width: 768px) {
+      section {
+        flex-direction: column !important;
+        padding: 0 !important;
+      }
 
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+      .md\:w-1\/2,
+      .md\:w-2\/3,
+      .md\:w-1\/3 {
+        width: 100% !important;
+        margin: 0;
+      }
 
-  .project-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
+      .typing-container {
+        margin: 1rem 0;
+      }
 
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
+      h1[style*="font-size"] {
+        font-size: 3rem !important;
+        line-height: 1.2 !important;
+      }
 
-  .project-image {
-    position: relative;
-    overflow: hidden;
-  }
+      .header-blur>div:not(:first-child) {
+        display: none;
+      }
 
-  .project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .project-card:hover .project-overlay {
-    opacity: 1;
-  }
-
-  .project-link {
-    color: white;
-    text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border: 2px solid white;
-    border-radius: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-  }
-
-  .project-link:hover {
-    background: white;
-    color: black;
-  }
-
-  .project-content {
-    padding: 1.5rem;
-  }
-
-  .tech-tag {
-    background: rgba(59, 130, 246, 0.2);
-    color: #60a5fa;
-    padding: 0.3rem 0.8rem;
-    border-radius: 1rem;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-  }
-
-  .tech-tag:hover {
-    background: rgba(59, 130, 246, 0.3);
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 768px) {
-    .grid-cols-2 {
-      grid-template-columns: 1fr;
+      .projetosarea>div>div {
+        padding: 1rem !important;
+      }
     }
-    
+
+    @media screen and (min-width: 769px) {
+      .menu-button {
+        display: none;
+      }
+
+      .social-links {
+        display: none !important;
+      }
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 12px;
+      background: #2d3748;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      border-radius: 6px;
+      transition: width 1.5s ease-in-out;
+      position: relative;
+    }
+
+    .skill-progress::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg,
+          rgba(255, 255, 255, 0.2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0.2) 75%,
+          transparent 75%);
+      background-size: 15px 15px;
+      animation: shine 1s linear infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 30px 0;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .project-card {
-      max-width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
-  }
 
-  .skill-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    min-height: 200px;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skill-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-      circle at center,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .skill-card:hover::before {
-    opacity: 1;
-  }
-
-  .skill-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .skill-card h5 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0.5rem 0;
-    color: #fff;
-  }
-
-  .skill-card p {
-    font-size: 0.9rem;
-    color: #94a3b8;
-    margin: 0;
-    line-height: 1.4;
-  }
-
-  .skill-card i {
-    transition: transform 0.3s ease;
-    margin-bottom: 0.5rem;
-  }
-
-  .skill-card:hover i {
-    transform: scale(1.2);
-  }
-
-  @media (max-width: 768px) {
-    .grid-cols-2 {
-      grid-template-columns: 1fr;
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
-    
+
+    .project-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-link {
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border: 2px solid white;
+      border-radius: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      background: white;
+      color: black;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .tech-tag {
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      padding: 0.3rem 0.8rem;
+      border-radius: 1rem;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .tech-tag:hover {
+      background: rgba(59, 130, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        max-width: 100%;
+      }
+    }
+
     .skill-card {
-      min-height: 180px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      min-height: 200px;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
-  }
 
-  /* Header e navegação */
-  .nav-link {
-    position: relative;
-    color: #94a3b8;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 0.5rem 0;
-  }
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    transition: width 0.3s ease;
-  }
+    .skill-card:hover::before {
+      opacity: 1;
+    }
 
-  .nav-link:hover {
-    color: #ffffff;
-  }
+    .skill-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
 
-  .nav-link:hover::after {
-    width: 100%;
-  }
+    .skill-card h5 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+      color: #fff;
+    }
 
-  .social-icon-link {
-    color: #94a3b8;
-    transition: all 0.3s ease;
-    padding: 0.5rem;
-    border-radius: 50%;
-  }
+    .skill-card p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin: 0;
+      line-height: 1.4;
+    }
 
-  .social-icon-link:hover {
-    color: #ffffff;
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.1);
-  }
+    .skill-card i {
+      transition: transform 0.3s ease;
+      margin-bottom: 0.5rem;
+    }
 
-  .mobile-menu {
-    display: none;
-    background: rgba(17, 24, 39, 0.95);
-    backdrop-filter: blur(10px);
-  }
+    .skill-card:hover i {
+      transform: scale(1.2);
+    }
 
-  .mobile-menu.open {
-    display: block;
-  }
+    @media (max-width: 768px) {
+      .grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
 
-  .mobile-nav-link {
-    display: block;
-    padding: 0.75rem;
-    color: #94a3b8;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border-radius: 0.5rem;
-  }
+      .skill-card {
+        min-height: 180px;
+      }
+    }
 
-  .mobile-nav-link:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-  }
+    /* Header e navegação */
+    .nav-link {
+      position: relative;
+      color: #94a3b8;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding: 0.5rem 0;
+    }
 
-  main {
-    padding-top: 5rem;
-  }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      transition: width 0.3s ease;
+    }
 
-  body {
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
-  }
+    .nav-link:hover {
+      color: #ffffff;
+    }
 
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
+    .nav-link:hover::after {
+      width: 100%;
+    }
 
-  ::-webkit-scrollbar-track {
-    background: #1f2937;
-  }
+    .social-icon-link {
+      color: #94a3b8;
+      transition: all 0.3s ease;
+      padding: 0.5rem;
+      border-radius: 50%;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background: #3b82f6;
-    border-radius: 5px;
-  }
+    .social-icon-link:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: #2563eb;
-  }
+    .mobile-menu {
+      display: none;
+      background: rgba(17, 24, 39, 0.95);
+      backdrop-filter: blur(10px);
+    }
 
-  ::selection {
-    background: #3b82f6;
-    color: white;
-  }
+    .mobile-menu.open {
+      display: block;
+    }
 
-  footer {
-    position: relative;
-    overflow: hidden;
-  }
+    .mobile-nav-link {
+      display: block;
+      padding: 0.75rem;
+      color: #94a3b8;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-radius: 0.5rem;
+    }
 
-  footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
-  }
+    .mobile-nav-link:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-  footer a {
-    position: relative;
-    display: inline-block;
-  }
+    main {
+      padding-top: 5rem;
+    }
 
-  footer a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;
-    bottom: -2px;
-    left: 0;
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-  }
+    body {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
 
-  footer a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-  .social-icon-footer {
-    transition: all 0.3s ease;
-  }
+    ::-webkit-scrollbar-track {
+      background: #1f2937;
+    }
 
-  .social-icon-footer:hover {
-    transform: translateY(-3px);
-    color: #3b82f6;
-  }
+    ::-webkit-scrollbar-thumb {
+      background: #3b82f6;
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2563eb;
+    }
+
+    ::selection {
+      background: #3b82f6;
+      color: white;
+    }
+
+    footer {
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+    }
+
+    footer a {
+      position: relative;
+      display: inline-block;
+    }
+
+    footer a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    footer a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    .social-icon-footer {
+      transition: all 0.3s ease;
+    }
+
+    .social-icon-footer:hover {
+      transform: translateY(-3px);
+      color: #3b82f6;
+    }
   </style>
 </head>
- 
- <body class="bg-gray-900 text-white font-sans">
+
+<body class="bg-gray-900 text-white font-sans">
   <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-opacity-80 bg-gray-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <div class="flex items-center">
-          <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text hover:from-blue-500 hover:to-cyan-500 transition-all duration-300">
+          <a href="#"
+            class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text hover:from-blue-500 hover:to-cyan-500 transition-all duration-300">
             João Benedet
           </a>
         </div>
@@ -547,7 +546,8 @@
           <a href="https://github.com/joaobenedetmachado" class="social-icon-link" target="_blank">
             <i class="fab fa-github text-xl"></i>
           </a>
-          <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/" class="social-icon-link" target="_blank">
+          <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/" class="social-icon-link"
+            target="_blank">
             <i class="fab fa-linkedin text-xl"></i>
           </a>
           <a href="https://www.instagram.com/jbenedetm" class="social-icon-link" target="_blank">
@@ -557,7 +557,7 @@
 
         <button class="md:hidden menu-button" id="menuButton" aria-label="Toggle menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
         </button>
       </div>
@@ -574,7 +574,8 @@
         <a href="https://github.com/joaobenedetmachado" class="social-icon-link" target="_blank">
           <i class="fab fa-github text-xl"></i>
         </a>
-        <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/" class="social-icon-link" target="_blank">
+        <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/" class="social-icon-link"
+          target="_blank">
           <i class="fab fa-linkedin text-xl"></i>
         </a>
         <a href="https://www.instagram.com/jbenedetm" class="social-icon-link" target="_blank">
@@ -584,217 +585,285 @@
     </div>
   </header>
   <main class="px-4 md:px-12 lg:px-24">
-   <section class="flex flex-col md:flex-row items-center mt-12" style="padding: 2rem;">
-    <div class="md:w-1/2">
-     <h1 style="font-size: clamp(2.5rem, 8vw, 7.5rem); font-weight: bold; line-height: 1.2;">
-      João <br> Benedet
-     </h1>
-     <div class="typing-container">
-      <span class="typing-text" id="typingText"></span>
-    </div>
-    </div>
-    <div class="md:w-1/2 mt-6 md:mt-0 imagemtop">
-      <img
-        alt="Illustration of a laptop with a blue background"
-        class="w-full"
-        src="./midias/Sem título.png"
-      />
-    </div>
-   </section>
-   <section class="mt-24 projetosarea">
-    <h3 class="text-3xl font-bold text-center" id="projetos">Projetos</h3>
-    <hr class="border-gray-700 mt-2"/>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-      <div class="project-card fade-in">
-        <div class="project-image">
-          <img src="./midias/vautlify.png" alt="Screenshot do Vaultify" class="rounded-t-xl w-full h-48 object-cover"/>
-          <div class="project-overlay">
-            <a href="https://github.com/joaobenedetmachado/Vaultify" class="project-link">
-              <i class="fas fa-external-link-alt"></i>
-              Ver Projeto
-            </a>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="flex items-center gap-3 mb-3">
-            <i class="fas fa-lock text-3xl text-blue-400"></i>
-            <h4 class="text-2xl font-bold">Vaultify</h4>
-          </div>
-          <p class="text-gray-300 mb-4">
-            Gerenciador de senhas seguro e intuitivo desenvolvido em Python. Interface gráfica amigável com banco de dados para armazenamento seguro de senhas.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">SQLite</span>
-            <span class="tech-tag">Tkinter</span>
-            <span class="tech-tag">Criptografia</span>
-          </div>
+    <section class="flex flex-col md:flex-row items-center mt-12" style="padding: 2rem;">
+      <div class="md:w-1/2">
+        <h1 style="font-size: clamp(2.5rem, 8vw, 7.5rem); font-weight: bold; line-height: 1.2;">
+          João <br> Benedet
+        </h1>
+        <div class="typing-container">
+          <span class="typing-text" id="typingText"></span>
         </div>
       </div>
+      <div class="md:w-1/2 mt-6 md:mt-0 imagemtop">
+        <img alt="Illustration of a laptop with a blue background" class="w-full" src="./midias/Sem título.png" />
+      </div>
+    </section>
+    <section class="mt-24 projetosarea">
+      <h3 class="text-3xl font-bold text-center" id="projetos">Projetos</h3>
+      <hr class="border-gray-700 mt-2" />
 
-      <div class="project-card fade-in">
-        <div class="project-image">
-          <img src="./midias/aquametrics.png" alt="Screenshot do AquaMetrics" class="rounded-t-xl w-full h-48 object-cover"/>
-          <div class="project-overlay">
-            <a href="https://github.com/joaobenedetmachado/AquaMetrics" class="project-link">
-              <i class="fas fa-external-link-alt"></i>
-              Ver Projeto
-            </a>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="flex items-center gap-3 mb-3">
-            <i class="fas fa-tint text-3xl text-blue-400"></i>
-            <h4 class="text-2xl font-bold">AquaMetrics</h4>
-          </div>
-          <p class="text-gray-300 mb-4">
-            Sistema de monitoramento de qualidade da água que mede pH, temperatura e turbidez (TDS). Auxilia no controle e prevenção de problemas relacionados à qualidade da água.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-tag">Pyhton</span>
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Javascript</span>
-            <span class="tech-tag">HTML/CSS</span>
-          </div>
-        </div>
-      </div>
-      <div class="project-card fade-in">
-        <div class="project-image">
-          <img src="./midias/ServiceFlow.png"  alt="Screenshot do Soluciotech" class="rounded-t-xl w-full h-48 object-cover object-top"/>
-        </div>
-        <div class="project-content">
-          <div class="flex items-center gap-3 mb-3">
-            <i class="fas fa-cogs text-3xl text-blue-400"></i>
-            <h4 class="text-2xl font-bold">ServiceFlow</h4>
-          </div>
-          <p class="text-gray-300 mb-4">
-          Marketplace de serviços integrado com IA para geração de demandas e soluções.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Python/FastAPI</span>
-            <span class="tech-tag">Bootstrap</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">OpenIA</span>
-          </div>
-        </div>
-      </div>
-      <div class="project-card fade-in">
-        <div class="project-image">
-          <img src="./midias/soluciotech.png"  alt="Screenshot do Soluciotech" class="rounded-t-xl w-full h-48 object-cover object-top"/>
-        </div>
-        <div class="project-content">
-          <div class="flex items-center gap-3 mb-3">
-            <i class="fas fa-cogs text-3xl text-blue-400"></i>
-            <h4 class="text-2xl font-bold">Soluciotech</h4>
-          </div>
-          <p class="text-gray-300 mb-4">
-
-            Landing Page para uma empresa de soluções tecnológicas relacionadas a segurança e climatização.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-tag">HTML/CSS</span>
-            <span class="tech-tag">Javascript</span>
-            <span class="tech-tag">Bootstrap</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
-   <section class="mt-24">
-    <h3 class="text-3xl font-bold text-center">Habilidades</h3>
-    <hr class="border-gray-700 mt-2"/>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-      <div class="fade-in">
-        <h4 class="text-xl font-bold mb-6">Front-end</h4>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="skill-card">
-            <i class="fab fa-react text-4xl text-blue-400"></i>
-            <h5>React</h5>
-            <p>Desenvolvimento de SPAs e componentes reutilizáveis</p>
-          </div>
-          <div class="skill-card">
-            <i class="fab fa-react text-4xl text-cyan-400"></i>
-            <h5>React Native</h5>
-            <p>Desenvolvimento mobile multiplataforma</p>
-          </div>
-          <div class="skill-card">
-            <div class="flex gap-2">
-              <i class="fab fa-html5 text-4xl text-orange-500"></i>
-              <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="./midias/vautlify.png" alt="Screenshot do Vaultify"
+              class="rounded-t-xl w-full h-48 object-cover" />
+            <div class="project-overlay">
+              <a href="https://github.com/joaobenedetmachado/Vaultify" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Projeto
+              </a>
             </div>
-            <h5>HTML & CSS</h5>
-            <p>Layouts responsivos e estilização moderna</p>
           </div>
-          <div class="skill-card">
-            <i class="fab fa-js text-4xl text-yellow-400"></i>
-            <h5>JavaScript</h5>
-            <p>ES6+, APIs, Async/Await</p>
+          <div class="project-content">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-lock text-3xl text-blue-400"></i>
+              <h4 class="text-2xl font-bold">Vaultify</h4>
+            </div>
+            <p class="text-gray-300 mb-4">
+              Gerenciador de senhas seguro e intuitivo desenvolvido em Python. Interface gráfica amigável com banco de
+              dados para armazenamento seguro de senhas.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">SQLite</span>
+              <span class="tech-tag">Tkinter</span>
+              <span class="tech-tag">Criptografia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="./midias/aquametrics.png" alt="Screenshot do AquaMetrics"
+              class="rounded-t-xl w-full h-48 object-cover" />
+            <div class="project-overlay">
+              <a href="https://github.com/joaobenedetmachado/AquaMetrics" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Projeto
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-tint text-3xl text-blue-400"></i>
+              <h4 class="text-2xl font-bold">AquaMetrics</h4>
+            </div>
+            <p class="text-gray-300 mb-4">
+              Sistema de monitoramento de qualidade da água que mede pH, temperatura e turbidez (TDS). Auxilia no
+              controle e prevenção de problemas relacionados à qualidade da água.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="tech-tag">Pyhton</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Javascript</span>
+              <span class="tech-tag">HTML/CSS</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="./midias/ServiceFlow.png" alt="Screenshot do Soluciotech"
+              class="rounded-t-xl w-full h-48 object-cover object-top" />
+          </div>
+          <div class="project-content">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-cogs text-3xl text-blue-400"></i>
+              <h4 class="text-2xl font-bold">ServiceFlow</h4>
+            </div>
+            <p class="text-gray-300 mb-4">
+              Marketplace de serviços integrado com IA para geração de demandas e soluções.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Python/FastAPI</span>
+              <span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">OpenIA</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="./midias/soluciotech.png" alt="Screenshot do Soluciotech"
+              class="rounded-t-xl w-full h-48 object-cover object-top" />
+          </div>
+          <div class="project-content">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-cogs text-3xl text-blue-400"></i>
+              <h4 class="text-2xl font-bold">Soluciotech</h4>
+            </div>
+            <p class="text-gray-300 mb-4">
+
+              Landing Page para uma empresa de soluções tecnológicas relacionadas a segurança e climatização.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">Javascript</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="./midias/converzone.png" alt="Screenshot do Soluciotech"
+              class="rounded-t-xl w-full h-48 object-cover object-top" />
+            <div class="project-overlay">
+              <a href="https://converzone.com.br" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Projeto
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-sync-alt text-3xl text-blue-400"></i>
+              <h4 class="text-2xl font-bold">Converzone</h4>
+            </div>
+            <p class="text-gray-300 mb-4">
+              Site com uma serie de conversores, feito de forma responsiva e intuitiva.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">Javascript</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="./midias/scrolamentos.png" alt="Screenshot do Soluciotech"
+              class="rounded-t-xl w-full h-48 object-cover object-top" />
+          </div>
+          <div class="project-content">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-tachometer-alt text-3xl text-blue-400"></i>
+              <h4 class="text-2xl font-bold">SCRolamentos Dashboard</h4>
+            </div>
+            <p class="text-gray-300 mb-4">
+            Dashboard com um sistema de orçamentos online com o foco de aprimorar e agilizar na realização de orçamentos
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">SpringBoot</span>
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">Javascript</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
           </div>
         </div>
       </div>
-      
-      <div class="fade-in">
-        <h4 class="text-xl font-bold mb-6">Back-end</h4>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="skill-card">
-            <i class="fab fa-java text-4xl text-red-500"></i>
-            <h5>Java</h5>
-            <p>POO, Collections, APIs</p>
+      </div>
+      </div>
+      </div>
+      </div>
+
+      </div>
+
+
+    </section>
+    <section class="mt-24">
+      <h3 class="text-3xl font-bold text-center">Habilidades</h3>
+      <hr class="border-gray-700 mt-2" />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div class="fade-in">
+          <h4 class="text-xl font-bold mb-6">Front-end</h4>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="skill-card">
+              <i class="fab fa-react text-4xl text-blue-400"></i>
+              <h5>React</h5>
+              <p>Desenvolvimento de SPAs e componentes reutilizáveis</p>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-react text-4xl text-cyan-400"></i>
+              <h5>React Native</h5>
+              <p>Desenvolvimento mobile multiplataforma</p>
+            </div>
+            <div class="skill-card">
+              <div class="flex gap-2">
+                <i class="fab fa-html5 text-4xl text-orange-500"></i>
+                <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+              </div>
+              <h5>HTML & CSS</h5>
+              <p>Layouts responsivos e estilização moderna</p>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-js text-4xl text-yellow-400"></i>
+              <h5>JavaScript</h5>
+              <p>ES6+, APIs, Async/Await</p>
+            </div>
           </div>
-          <div class="skill-card">
-            <i class="fas fa-leaf text-4xl text-green-500"></i>
-            <h5>Spring</h5>
-            <p>Spring Boot, MVC, JPA</p>
-          </div>
-          <div class="skill-card">
-            <i class="fab fa-python text-4xl text-yellow-300"></i>
-            <h5>Python</h5>
-            <p>Automação e desenvolvimento backend</p>
-          </div>
-          <div class="skill-card">
-            <i class="fas fa-database text-4xl text-blue-600"></i>
-            <h5>MySQL</h5>
-            <p>Queries e modelagem de dados</p>
+        </div>
+
+        <div class="fade-in">
+          <h4 class="text-xl font-bold mb-6">Back-end</h4>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="skill-card">
+              <i class="fab fa-java text-4xl text-red-500"></i>
+              <h5>Java</h5>
+              <p>POO, Collections, APIs</p>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-leaf text-4xl text-green-500"></i>
+              <h5>Spring</h5>
+              <p>Spring Boot, MVC, JPA</p>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-python text-4xl text-yellow-300"></i>
+              <h5>Python</h5>
+              <p>Automação e desenvolvimento backend</p>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-database text-4xl text-blue-600"></i>
+              <h5>MySQL</h5>
+              <p>Queries e modelagem de dados</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-   <section class="mt-24" id="sobremim">
-    <h3 class="text-3xl font-bold">
-     Sobre Mim
-    </h3>
-    <hr class="border-gray-700 mt-2"/>
-    <div class="flex flex-col md:flex-row mt-12" style="display: flex; gap: 120px;">
-     <div class="md:w-2/3">
-      <p class="text-gray-400 idade">
-       Olá, sou o João Victor Benedet, um estudante de <span id="idade"></span> anos apaixonado por tecnologia e programação. Atualmente, estou cursando Técnico em Informática na SATC, onde adquiro conhecimentos práticos e teóricos para desenvolver minhas habilidades no campo da tecnologia.
-      </p>
-      <p class="mt-4 text-gray-400">
-       Tenho experiência de 3 anos em programação, durante os quais conclui diversos cursos que ampliaram meu conhecimento e expertise. Entre os cursos que finalizei, destaco os cursos de Python com 120 horas cada pelo CursoEmVideo, além de um curso de desenvolvimento mobile com React Native pela SATC. Também participei dos cursos Explorer e Discover na Rocketseat, e um curso de Front End no SENAC, alem de cursos de Java para desenvolvimento de API REST's com Spring Boot.
-      </p>
-      <p class="mt-4 text-gray-400">
-       Essas formações me proporcionaram uma sólida base em diversas linguagens e ferramentas como Java, Spring Boot, Python, JavaScript, React, Bootstrap, HTML, CSS, Node.js, Git, GitHub e Linux.
-      </p>
-      <p class="mt-4 text-gray-400">
-       Além das habilidades técnicas, me considero uma pessoa criativa e proativa, com forte capacidade de pensamento crítico e resolução de problemas. Valorizo o trabalho em equipe e possuo boas habilidades de comunicação e liderança. Sou adaptável e com uma grande capacidade de aprender continuamente em um dia a dia repleto de inovações.
-      </p>
-      <p class="mt-4 text-gray-400">
-       Estou sempre em busca de novos desafios que me permitam aplicar e expandir meus conhecimentos, contribuindo de forma significativa para projetos inovadores e impactantes.
-      </p>
-     </div>
-     <div class="md:w-1/3 mt-6 md:mt-0">
-      <div class="bg-blue-500 p-6 rounded">
-       <h4 class="text-xl font-bold text-white">
-        Entre em contato:
-       </h4>
+    </section>
+    <section class="mt-24" id="sobremim">
+      <h3 class="text-3xl font-bold">
+        Sobre Mim
+      </h3>
+      <hr class="border-gray-700 mt-2" />
+      <div class="flex flex-col md:flex-row mt-12" style="display: flex; gap: 120px;">
+        <div class="md:w-2/3">
+          <p class="text-gray-400 idade">
+            Olá, sou o João Victor Benedet, um estudante de <span id="idade"></span> anos apaixonado por tecnologia e
+            programação. Atualmente, estou cursando Técnico em Informática na SATC, onde adquiro conhecimentos práticos
+            e teóricos para desenvolver minhas habilidades no campo da tecnologia.
+          </p>
+          <p class="mt-4 text-gray-400">
+            Tenho experiência de 3 anos em programação, durante os quais conclui diversos cursos que ampliaram meu
+            conhecimento e expertise. Entre os cursos que finalizei, destaco os cursos de Python com 120 horas cada pelo
+            CursoEmVideo, além de um curso de desenvolvimento mobile com React Native pela SATC. Também participei dos
+            cursos Explorer e Discover na Rocketseat, e um curso de Front End no SENAC, alem de cursos de Java para
+            desenvolvimento de API REST's com Spring Boot.
+          </p>
+          <p class="mt-4 text-gray-400">
+            Essas formações me proporcionaram uma sólida base em diversas linguagens e ferramentas como Java, Spring
+            Boot, Python, JavaScript, React, Bootstrap, HTML, CSS, Node.js, Git, GitHub e Linux.
+          </p>
+          <p class="mt-4 text-gray-400">
+            Além das habilidades técnicas, me considero uma pessoa criativa e proativa, com forte capacidade de
+            pensamento crítico e resolução de problemas. Valorizo o trabalho em equipe e possuo boas habilidades de
+            comunicação e liderança. Sou adaptável e com uma grande capacidade de aprender continuamente em um dia a dia
+            repleto de inovações.
+          </p>
+          <p class="mt-4 text-gray-400">
+            Estou sempre em busca de novos desafios que me permitam aplicar e expandir meus conhecimentos, contribuindo
+            de forma significativa para projetos inovadores e impactantes.
+          </p>
+        </div>
+        <div class="md:w-1/3 mt-6 md:mt-0">
+          <div class="bg-blue-500 p-6 rounded">
+            <h4 class="text-xl font-bold text-white">
+              Entre em contato:
+            </h4>
+          </div>
+        </div>
       </div>
-     </div>
-    </div>
-   </section>
+    </section>
   </main>
   <footer class="bg-gray-800 mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -810,7 +879,8 @@
             <a href="https://github.com/joaobenedetmachado" class="text-gray-400 hover:text-white transition-colors">
               <i class="fab fa-github text-2xl"></i>
             </a>
-            <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/" class="text-gray-400 hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-benedet-machado-80b3b923a/"
+              class="text-gray-400 hover:text-white transition-colors">
               <i class="fab fa-linkedin text-2xl"></i>
             </a>
             <a href="https://www.instagram.com/jbenedetm" class="text-gray-400 hover:text-white transition-colors">
@@ -868,62 +938,62 @@
     </div>
   </footer>
   <script>
-   const menuButton = document.getElementById('menuButton');
-const mobileMenu = document.getElementById('mobileMenu');
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-menuButton.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
-
-document.querySelectorAll('.mobile-nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-  });
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-    mobileMenu.classList.remove('open');
-  }
-});
-
-const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
-const sections = document.querySelectorAll('section');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (window.pageYOffset >= sectionTop - 100) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove('text-white');
-    if (link.getAttribute('href').slice(1) === current) {
-      link.classList.add('text-white');
-    }
-  });
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
     });
-  });
-});
 
-function atualizarIdade() {
-  const anoAtual = new Date().getFullYear(); 
-  const anoNascimento = 2007;
-  const idade = anoAtual - anoNascimento; 
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
 
-  document.getElementById('idade').textContent = idade;
-}
-    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-white');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('text-white');
+        }
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    function atualizarIdade() {
+      const anoAtual = new Date().getFullYear();
+      const anoNascimento = 2007;
+      const idade = anoAtual - anoNascimento;
+
+      document.getElementById('idade').textContent = idade;
+    }
+
     const phrases = ['Desenvolvedor', 'Back-end', 'Entusiasta de Tecnologia'];
     let currentPhraseIndex = 0;
     const typingTextElement = document.getElementById('typingText');
@@ -960,47 +1030,48 @@ function atualizarIdade() {
 
     typePhrase(phrases[currentPhraseIndex]);
     document.addEventListener('mousemove', (event) => {
-  const element = document.querySelector('.imagemtop');
-  const rect = element.getBoundingClientRect();
-  const elementX = rect.left + rect.width / 2;
-  const elementY = rect.top + rect.height / 2;
-  const deltaX = event.clientX - elementX;
-  const deltaY = event.clientY - elementY;
-  const rotateX = (deltaY / rect.height) * 10;
-  const rotateY = (deltaX / rect.width) * -10;
-  element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-});atualizarIdade()
+      const element = document.querySelector('.imagemtop');
+      const rect = element.getBoundingClientRect();
+      const elementX = rect.left + rect.width / 2;
+      const elementY = rect.top + rect.height / 2;
+      const deltaX = event.clientX - elementX;
+      const deltaY = event.clientY - elementY;
+      const rotateX = (deltaY / rect.height) * 10;
+      const rotateY = (deltaX / rect.width) * -10;
+      element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    }); atualizarIdade()
 
-// Animação de scroll para os projetos
-const projectObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, {
-  threshold: 0.1
-});
+    // Animação de scroll para os projetos
+    const projectObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
 
-document.querySelectorAll('.project-card').forEach(card => {
-  projectObserver.observe(card);
-});
+    document.querySelectorAll('.project-card').forEach(card => {
+      projectObserver.observe(card);
+    });
 
-const observerOptions = {
-  threshold: 0.1
-};
+    const observerOptions = {
+      threshold: 0.1
+    };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, observerOptions);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
 
-document.querySelectorAll('.fade-in').forEach(element => {
-  observer.observe(element);
-});
+    document.querySelectorAll('.fade-in').forEach(element => {
+      observer.observe(element);
+    });
   </script>
- </body>
+</body>
+
 </html>
